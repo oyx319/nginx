@@ -1,0 +1,16 @@
+
+
+set $flag 0;
+
+if ($https = "") {
+	set $flag "1";
+}
+
+if ($request_uri ~* "^/api/wiki") {
+  	set $flag "0";
+}
+
+
+if ($flag = "1") {
+	return 301 https://$host$request_uri;
+}

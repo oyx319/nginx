@@ -1,0 +1,56 @@
+
+
+server {
+      listen       80;
+
+      server_name  updatehaqi.keepwork.com;
+
+	include /etc/nginx/keepwork_ssl;
+
+      root   /data/update61;
+      charset utf-8;
+
+
+
+
+      location ~ .*\.(gif|jpg|jpeg|bmp|png|ico|txt|js|css)$   
+      {   
+        expires      7d; 
+      }
+}
+
+server {
+      listen       80;
+
+      server_name  static.keepwork.com;
+
+	include /etc/nginx/keepwork_ssl;
+
+      root   /data/static;
+      charset utf-8;
+
+	  
+      location ~ .*\.(gif|jpg|jpeg|bmp|png|ico|txt|js|css)$   
+      {   
+        expires      7d; 
+      }
+}
+
+
+
+
+server {
+	listen 80;
+
+	server_name cdn.keepwork.com;
+
+
+	include /etc/nginx/keepwork_ssl;
+
+
+	location / {
+		charset utf-8;
+		autoindex on;
+		root /data/;
+	}
+}
