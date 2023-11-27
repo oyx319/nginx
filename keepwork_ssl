@@ -1,5 +1,9 @@
 listen 443 ssl http2;
 # ssl off;
-ssl_certificate /etc/nginx/ssl/keepwork.com.crt;
-ssl_certificate_key /etc/nginx/ssl/keepwork.com.key;
+##old ssl files
+#ssl_certificate /etc/nginx/ssl/keepwork.com.crt;
+#ssl_certificate_key /etc/nginx/ssl/keepwork.com.key;
 
+## new ssl files 2023-11-27
+ssl_certificate /etc/nginx/ssl/keepwork_com/nginx/keepwork.com.pem;
+ssl_certificate_key /etc/nginx/ssl/keepwork_com/nginx/keepwork.com.key;
